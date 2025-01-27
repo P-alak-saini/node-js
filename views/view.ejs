@@ -1,0 +1,18 @@
+<%- include("./includes/header.ejs") %>
+<div id="list" class="container mt-5">
+    <div style="display: flex;justify-content: space-between;align-items: center;">
+      <h1>your bio data</h1>
+      <a href="/api/v1/create" class="btn btn-success">edit more details</a>
+    </div>
+    <hr>
+      <h1>User Name : <%= student.name %> </h1>
+     <h1>Mother's Name : <%= student.mothersName%> </h1>
+    <h1> Father's Name:<%= student.fathersName %></h1>
+
+      
+  </div>
+
+   </section>
+
+
+   <script src="./js/script.js"></script>

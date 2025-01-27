@@ -1,0 +1,14 @@
+<%- include("./includes/header.ejs") %>
+<%- include("./includes/navbar.ejs") %>
+
+<div>
+    <h1>Login Page</h1>
+    <form action="/api/v1/login" method="post">
+        <input type="email" placeholder="enter user email" name="email">
+        <input type="password" placeholder="enter user pass" name="password">
+        <button type="submit">sign up</button>
+    </form>
+   </div>
+
+
+ <%- include("./includes/footer.ejs") %>

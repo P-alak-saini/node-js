@@ -1,0 +1,25 @@
+<%- include("./includes/header.ejs") %>
+<%- include("./includes/navbar.ejs") %>
+
+<div style="margin: auto; width: 50%;">
+    
+    <!-- <h1>my profile</h1> -->
+    <h1>Hello <%= student.name %>
+    </h1>
+    <h4>
+       Email : <%= student.email %>
+    </h1>
+
+    <form action="/upload" method="post"  enctype="multipart/form-data" style="margin-top: 10px;">
+        <input type="text" placeholder="enter name" name="username">
+        <input type="file" name="profile" accept=".jpg,.png">
+        <button type="submit">submit</button>
+    </form>
+
+    <form action="/api/v1/logout" method="post" style="margin-top: 20px;">
+        <button type="submit">Logout</button>
+    </form>
+</div>
+
+
+    <%- include("./includes/footer.ejs") %>

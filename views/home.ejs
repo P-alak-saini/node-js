@@ -1,0 +1,69 @@
+<%- include("./includes/header.ejs") %> <%- include("./includes/navbar.ejs") %>
+
+<section>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+          src="https://images.ctfassets.net/aq13lwl6616q/7cS8gBoWulxkWNWEm0FspJ/c7eb42dd82e27279307f8b9fc9b136fa/nodejs_cover_photo_smaller_size.png"
+          alt=""
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?cs=srgb&dl=daylight-environment-forest-459225.jpg&fm=jpg"
+          alt=""
+        />
+      </div>
+      <div class="swiper-slide">
+        <img
+          src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?cs=srgb&dl=daylight-forest-glossy-443446.jpg&fm=jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <div id="list" class="container mt-5">
+    <div
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <h1>All Students List</h1>
+      <a href="/api/v1/create" class="btn btn-success">Create Student</a>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAME</th>
+          <th scope="col">MOTHERS NAME</th>
+          <th scope="col">FATHERS NAME</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (elem of finddata){ %>
+        <tr>
+          <th scope="row"><%= elem._id %></th>
+          <td><%= elem.name %></td>
+          <td><%= elem.mothersName %></td>
+          <td><%= elem.fathersName %></td>
+          <td>
+            <button ><a href="/api/v1/view/<%= elem._id %>"class="btn btn-warning"> View</a></button>
+            <button><a href="/api/v1/edit/<%= elem._id %>" class="btn btn-success">Edit</a> </button>
+            <form method="post" action="/api/v1/delete/<%= elem._id %>?_method=DELETE">
+            <button class="btn btn-danger " >delete</button>
+            </form>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <%- include("./includes/footer.ejs") %>
+  </div>
+</section>

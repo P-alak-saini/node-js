@@ -1,0 +1,12 @@
+<nav class="bg-dark d-flex align-items-center justify-content-between p-3 palak">
+    <h1 class="text-light">navbar</h1>
+    <div class="d-flex gap-4">
+        <a href="/api/v1/home" class="nav-link text-light">Home</a>
+        <%if(palak){%>
+            <a href="/api/v1/profile" class="nav-link text-light">my Profile</a>
+        <%}else{%>
+            <a href="/api/v1/login" class="nav-link text-light">Login</a>
+        <a href="/api/v1/signup" class="nav-link text-light">Signup</a>
+        <%}%>
+    </div>
+</nav>
